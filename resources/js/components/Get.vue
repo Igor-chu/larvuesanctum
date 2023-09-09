@@ -6,7 +6,20 @@
 
 <script>
     export default {
-        mame: "Get"
+        mame: "Get",
+
+        mounted() {
+            this.getData()
+        },
+
+        methods: {
+            getData() {
+                axios.get('/api/get')
+                    .then(res => {
+                        console.log(res);
+                    })
+            }
+        }
     }
 
 </script>
